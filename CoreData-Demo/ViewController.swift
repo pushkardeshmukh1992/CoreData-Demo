@@ -8,9 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     let tableView: UITableView = {
         let table = UITableView()
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -19,9 +16,10 @@ class ViewController: UIViewController {
     
     private var models = [ToDoListItem]()
     
+    private var todoService: TodoServiceProtocol = TodoService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         title = "CoreData - To Do List"
         view.addSubview(tableView)
@@ -46,56 +44,33 @@ class ViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    // Core Data
-    
     func getAllItems() {
-        do {
-            models = try context.fetch(ToDoListItem.fetchRequest())
-            
-            DispatchQueue.main.async { [weak self] in
+        todoService.getAllItems { [weak self] result in
+            switch result {
+                case .success(let items):
+                self?.models = items
                 self?.tableView.reloadData()
+                
+            case .failure:
+                break
             }
-            
-        } catch {
-            // error
         }
     }
-    
+//
     func createItem(name: String) {
-        let newItem = ToDoListItem(context: context)
-        newItem.name = name
-        newItem.createdAt = Date()
-        
-        do {
-            try context.save()
-            getAllItems()
-        } catch {
-            
-        }
+        todoService.createItem(name: name)
+        getAllItems()
     }
-    
+
     func deleteItem(item: ToDoListItem) {
-        context.delete(item)
-        
-        do {
-            try context.save()
-            getAllItems()
-        } catch {
-            
-        }
-        
+        todoService.deleteItem(item: item)
+        getAllItems()
+
     }
-    
+
     func update(item: ToDoListItem, newName: String) {
-        item.name = newName
-        
-        do {
-            try context.save()
-            getAllItems()
-        } catch {
-            
-        }
-        
+        todoService.update(item: item, newName: newName)
+        getAllItems()
     }
 }
 
@@ -137,3 +112,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         present(sheet, animated: true)
     }
 }
+
+
