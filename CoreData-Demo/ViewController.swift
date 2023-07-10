@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     private var models = [ToDoListItem]()
     
-    private var todoService: TodoServiceProtocol = TodoService()
+    private var todoService: TodoStoreProtocol = TodoStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()

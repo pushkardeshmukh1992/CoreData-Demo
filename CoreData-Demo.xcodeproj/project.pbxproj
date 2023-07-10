@@ -16,7 +16,7 @@
 		FA238CBA2A5A5C82005A5C01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA238CB82A5A5C82005A5C01 /* LaunchScreen.storyboard */; };
 		FA238CC32A5A5EEA005A5C01 /* ToDoListItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA238CC12A5A5EEA005A5C01 /* ToDoListItem+CoreDataClass.swift */; };
 		FA238CC42A5A5EEA005A5C01 /* ToDoListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA238CC22A5A5EEA005A5C01 /* ToDoListItem+CoreDataProperties.swift */; };
-		FA238CC72A5B370D005A5C01 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA238CC62A5B370D005A5C01 /* TodoService.swift */; };
+		FA238CC72A5B370D005A5C01 /* TodoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA238CC62A5B370D005A5C01 /* TodoStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		FA238CBB2A5A5C82005A5C01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA238CC12A5A5EEA005A5C01 /* ToDoListItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA238CC22A5A5EEA005A5C01 /* ToDoListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		FA238CC62A5B370D005A5C01 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
+		FA238CC62A5B370D005A5C01 /* TodoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 				FA238CC52A5A5F09005A5C01 /* ToDoListItem */,
 				FA238CAA2A5A5C7F005A5C01 /* AppDelegate.swift */,
 				FA238CAC2A5A5C7F005A5C01 /* SceneDelegate.swift */,
-				FA238CC62A5B370D005A5C01 /* TodoService.swift */,
+				FA238CC62A5B370D005A5C01 /* TodoStore.swift */,
 				FA238CAE2A5A5C7F005A5C01 /* ViewController.swift */,
 				FA238CB02A5A5C7F005A5C01 /* Main.storyboard */,
 				FA238CB62A5A5C82005A5C01 /* Assets.xcassets */,
@@ -162,7 +162,7 @@
 				FA238CB52A5A5C7F005A5C01 /* CoreData_Demo.xcdatamodeld in Sources */,
 				FA238CAB2A5A5C7F005A5C01 /* AppDelegate.swift in Sources */,
 				FA238CC32A5A5EEA005A5C01 /* ToDoListItem+CoreDataClass.swift in Sources */,
-				FA238CC72A5B370D005A5C01 /* TodoService.swift in Sources */,
+				FA238CC72A5B370D005A5C01 /* TodoStore.swift in Sources */,
 				FA238CC42A5A5EEA005A5C01 /* ToDoListItem+CoreDataProperties.swift in Sources */,
 				FA238CAD2A5A5C7F005A5C01 /* SceneDelegate.swift in Sources */,
 			);

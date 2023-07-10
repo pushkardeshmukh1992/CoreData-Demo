@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-protocol TodoServiceProtocol {
+protocol TodoStoreProtocol {
     var container: NSPersistentContainer { get set }
     
     func getAllItems(completion: @escaping (Result<[ToDoListItem], Error>) -> Void)
@@ -17,7 +17,7 @@ protocol TodoServiceProtocol {
     func update(item: ToDoListItem, newName: String)
 }
 
-class TodoService: TodoServiceProtocol {
+class TodoStore: TodoStoreProtocol {
     var container: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreData_Demo")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
